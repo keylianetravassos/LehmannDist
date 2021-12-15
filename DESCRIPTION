@@ -2,7 +2,7 @@ Package: LehmannDist
 Title: Lehmann Distributions Type I and II
 Version: 0.0.0.9000
 Authors@R: 
-    person("Keyliane", "Silva", "keylianetravasso@gmail.com", role = c("aut", "cre"),
+    person("Keyliane", "Travassos", ,"keylianetravasso@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-2490-224X"))
 Description: Using the method of generation of distributions proposed by Lehmann
             (1953), we propose the Exponential-Inverse Logistics distributions 
