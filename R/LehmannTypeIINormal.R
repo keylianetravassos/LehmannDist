@@ -1,12 +1,13 @@
 ##' @title The Lehmann Type II Normal Distribution
 ##' @name LehmannTypeIINormal
-##' @aliases dL2norm rL2norm
+##' @aliases dL2norm rL2norm pL2norm
 ##' @description Density, distribution function, quantile function and random
 ##' generation for the Lehmann Type II Normal distribution with location
 ##' parameter equal to xi, scale parameter equal to eta and power parameter
 ##' equal to alpha.
 
 ##' @usage dL2norm(x, xi = 0, eta = 1, alpha, log = FALSE)
+##' pL2norm(x, xi = 0, eta = 1, alpha)
 ##' rL2norm(n, xi = 0, eta = 1, alpha)
 
 ##' @param x vector of quantiles.
@@ -32,15 +33,26 @@
 ##' @export
 # -------------- DENSIDADE --------------------
 dL2norm <- function(x, xi=0, eta = 1, alpha, log = FALSE){
+  if(alpha < 0) return(NaN)
   d <- alpha/eta * (1 - pnorm((x - xi)/eta))^(alpha-1) * dnorm((x-xi)/eta)
   if(log == TRUE) return(log(d))
   d
 }
+
 # --------------------------------------------
+
+##' @export
+# ------------- DISTRIBUICAO ------------------
+pL2norm <- function(x, xi = 0, eta = 1, alpha){
+  if(alpha < 0) return(NaN)
+  1 - (1 - pnorm((x - xi)/eta))^alpha
+}
+# -------------- DENSIDADE --------------------
 
 ##' @export
 # -- FUNCAO GERADORA DE NUMEROS ALEATORIOS ---
 rL2norm <- function(n, xi=0, eta = 1, alpha){
+  if(alpha < 0) return(NaN)
   q <- runif(n)
   x <- eta*(qnorm( 1 - (1-q)^(1/alpha)))+xi
   return(x)
