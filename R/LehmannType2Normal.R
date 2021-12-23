@@ -15,7 +15,7 @@
 ##' @param n number of observations.
 ##' @param xi vector of location parameters.
 ##' @param eta vector of scale parameters.
-##' @param alpha vector of power parameters.
+##' @param alpha vector of positive power parameters.
 ##' @param log logical; if TRUE, probabilities p are givem log(p)
 ##' @return dL2norm gives the density, pL2norm gives the distribution function,
 ##' qL2norm gives the quantile function, and rL2norm generates random sample.
