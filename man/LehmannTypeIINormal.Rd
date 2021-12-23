@@ -6,11 +6,13 @@
 \alias{dL2norm}
 \alias{rL2norm}
 \alias{pL2norm}
+\alias{likeL2norm}
 \title{The Lehmann Type II Normal Distribution}
 \usage{
 dL2norm(x, xi = 0, eta = 1, alpha, log = FALSE)
 pL2norm(x, xi = 0, eta = 1, alpha)
 rL2norm(n, xi = 0, eta = 1, alpha)
+likeL2norm(x, xi = 0, eta = 1, alpha)
 }
 \arguments{
 \item{x}{vector of quantiles.}
